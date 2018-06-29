@@ -1,0 +1,9 @@
+<div *ngFor="let task of tasks">
+	<app-task-item 
+		[task]="task" 
+		(editModeActive)="editModeActive($event)" 
+		(removeTask)="removeTask($event)" 
+		(editTask)="editTask($event)">
+	</app-task-item>
+</div>
+<app-task-input (taskAdded)="addTask($event)"></app-task-input>

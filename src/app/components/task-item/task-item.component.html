@@ -1,0 +1,18 @@
+<div class="taskWrapper" *ngIf="!task.isActive">
+	<div>
+		{{task.description}}
+	</div>
+		<div class="action-btns">
+		<i class="fa fa-pencil edit-task" (click)="activateInputField()"></i>
+		<i class="fa fa-trash delete-task" (click)="deleteTask()"></i>
+	</div>
+</div>
+<div class="taskWrapper" *ngIf="task.isActive">
+	<div>
+		<input id="{{task.id}}" class="edit-task-input" #inputField type="text" value="{{task.description}}" (keyup.enter)="saveChanges(inputField.value)">
+	</div>
+	<div class="action-btns">
+		<i class="fa fa-check edit-task" (click)="saveChanges(inputField.value)"></i>
+		<i class="fa fa-close delete-task" (click)="revertChanges()"></i>
+	</div>
+</div>

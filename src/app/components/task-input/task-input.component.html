@@ -1,0 +1,8 @@
+<div class="taskinput-wrapper">
+  <label class="label">Write your awesome task</label>
+	<input autofocus type="text" [(ngModel)]="taskText" value={{taskText}} (keyup.enter)="addTask()"/>
+  <button [disabled]="!taskText" class="task-btn" (click)="addTask()" aria-hidden="true">Add</button>
+</div>
+
+
+
